@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
@@ -66,7 +66,7 @@
 <wire x1="0" y1="0" x2="7.62" y2="7.62" width="0.254" layer="94"/>
 <wire x1="0" y1="0" x2="0" y2="7.62" width="0.254" layer="94"/>
 <text x="-2.54" y="-12.7" size="1.778" layer="95" rot="R90">&gt;NAME</text>
-<text x="2.54" y="-12.7" size="1.778" layer="96" rot="R90">&gt;VALUE</text>
+<text x="2.54" y="-12.7" size="1.778" layer="95" rot="R90">&gt;VALUE</text>
 </symbol>
 <symbol name="OPAMP">
 <wire x1="-7.62" y1="-5.08" x2="0" y2="-5.08" width="0.254" layer="94"/>
@@ -74,92 +74,15 @@
 <wire x1="7.62" y1="-5.08" x2="0" y2="12.7" width="0.254" layer="94"/>
 <wire x1="0" y1="12.7" x2="-7.62" y2="-5.08" width="0.254" layer="94"/>
 <text x="-7.62" y="-5.08" size="1.778" layer="95" rot="R90">&gt;NAME</text>
-<text x="7.62" y="2.54" size="1.778" layer="96" rot="R90">&gt;VALUE</text>
+<text x="7.62" y="2.54" size="1.778" layer="95" rot="R90">&gt;VALUE</text>
 <wire x1="0" y1="12.7" x2="0" y2="15.24" width="0.254" layer="94"/>
 <wire x1="0" y1="-5.08" x2="0" y2="-7.62" width="0.254" layer="94"/>
-</symbol>
-<symbol name="FILTER">
-<wire x1="-5.08" y1="5.08" x2="5.08" y2="5.08" width="0.254" layer="94"/>
-<wire x1="5.08" y1="5.08" x2="5.08" y2="0" width="0.254" layer="94"/>
-<wire x1="5.08" y1="0" x2="5.08" y2="-5.08" width="0.254" layer="94"/>
-<wire x1="5.08" y1="-5.08" x2="-5.08" y2="-5.08" width="0.254" layer="94"/>
-<wire x1="-5.08" y1="-5.08" x2="-5.08" y2="0" width="0.254" layer="94"/>
-<text x="-5.08" y="2.54" size="1.778" layer="95">&gt;NAME</text>
-<text x="-5.08" y="-5.08" size="1.778" layer="96">&gt;VALUE</text>
-<wire x1="-5.08" y1="0" x2="-5.08" y2="5.08" width="0.254" layer="94"/>
-<wire x1="-5.08" y1="0" x2="-7.62" y2="0" width="0.254" layer="94"/>
-<wire x1="5.08" y1="0" x2="7.62" y2="0" width="0.254" layer="94"/>
-</symbol>
-<symbol name="RX/TX_SWITCH">
-<circle x="-5.08" y="5.08" radius="1.79605" width="0.254" layer="94"/>
-<circle x="5.08" y="5.08" radius="1.79605" width="0.254" layer="94"/>
-<circle x="0" y="-2.54" radius="1.79605" width="0.254" layer="94"/>
-<wire x1="0" y1="-1.27" x2="3.81" y2="6.35" width="0.254" layer="94"/>
-<text x="5.08" y="7.62" size="1.27" layer="97" rot="R90">RX</text>
-<text x="-5.08" y="7.62" size="1.27" layer="97" rot="R90">TX</text>
-<text x="-6.35" y="-3.81" size="1.27" layer="95" rot="R90">&gt;NAME</text>
-<text x="-5.08" y="-3.81" size="1.27" layer="96" rot="R90">&gt;VALUE</text>
-</symbol>
-<symbol name="MIXER">
-<circle x="0" y="0" radius="10.4726875" width="0.254" layer="94"/>
-<wire x1="-7.62" y1="7.62" x2="7.62" y2="-7.62" width="0.254" layer="94"/>
-<wire x1="7.62" y1="7.62" x2="-7.62" y2="-7.62" width="0.254" layer="94"/>
-<text x="-5.08" y="15.24" size="1.778" layer="95">&gt;NAME</text>
-<text x="-5.08" y="12.7" size="1.778" layer="96">&gt;VALUE</text>
 </symbol>
 </symbols>
 <devicesets>
 <deviceset name="ANTENNA" prefix="ANT" uservalue="yes">
 <gates>
 <gate name="G$1" symbol="ANTANNA" x="0" y="12.7"/>
-</gates>
-<devices>
-<device name="">
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="AMP" prefix="AMP">
-<gates>
-<gate name="G$1" symbol="OPAMP" x="0" y="0"/>
-</gates>
-<devices>
-<device name="">
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="FILTER" prefix="FILTER" uservalue="yes">
-<gates>
-<gate name="G$1" symbol="FILTER" x="0" y="0"/>
-</gates>
-<devices>
-<device name="">
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="SWITCH" prefix="SW">
-<gates>
-<gate name="G$1" symbol="RX/TX_SWITCH" x="0" y="0"/>
-</gates>
-<devices>
-<device name="">
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="MIXER" prefix="MX">
-<gates>
-<gate name="G$1" symbol="MIXER" x="0" y="0"/>
 </gates>
 <devices>
 <device name="">

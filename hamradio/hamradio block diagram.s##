@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
@@ -113,6 +113,81 @@ LETTER landscape</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="Block diagrams">
+<packages>
+</packages>
+<symbols>
+<symbol name="ANTANNA">
+<description>simple antenna for block diagram</description>
+<wire x1="0" y1="0" x2="0" y2="-17.78" width="0.254" layer="94"/>
+<wire x1="0" y1="0" x2="-7.62" y2="7.62" width="0.254" layer="94"/>
+<wire x1="0" y1="0" x2="7.62" y2="7.62" width="0.254" layer="94"/>
+<wire x1="0" y1="0" x2="0" y2="7.62" width="0.254" layer="94"/>
+<text x="-2.54" y="-12.7" size="1.778" layer="95" rot="R90">&gt;NAME</text>
+<text x="2.54" y="-12.7" size="1.778" layer="95" rot="R90">&gt;VALUE</text>
+</symbol>
+<symbol name="FILTER">
+<wire x1="-5.08" y1="5.08" x2="5.08" y2="5.08" width="0.254" layer="94"/>
+<wire x1="5.08" y1="5.08" x2="5.08" y2="0" width="0.254" layer="94"/>
+<wire x1="5.08" y1="0" x2="5.08" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="5.08" y1="-5.08" x2="-5.08" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="-5.08" x2="-5.08" y2="0" width="0.254" layer="94"/>
+<text x="-5.08" y="2.54" size="1.778" layer="95">&gt;NAME</text>
+<text x="-5.08" y="-5.08" size="1.778" layer="96">&gt;VALUE</text>
+<wire x1="-5.08" y1="0" x2="-5.08" y2="5.08" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="0" x2="-7.62" y2="0" width="0.254" layer="94"/>
+<wire x1="5.08" y1="0" x2="7.62" y2="0" width="0.254" layer="94"/>
+</symbol>
+<symbol name="RX/TX_SWITCH">
+<circle x="-5.08" y="5.08" radius="1.79605" width="0.254" layer="94"/>
+<circle x="5.08" y="5.08" radius="1.79605" width="0.254" layer="94"/>
+<circle x="0" y="-2.54" radius="1.79605" width="0.254" layer="94"/>
+<wire x1="0" y1="-1.27" x2="3.81" y2="6.35" width="0.254" layer="94"/>
+<text x="5.08" y="7.62" size="1.27" layer="97" rot="R90">RX</text>
+<text x="-5.08" y="7.62" size="1.27" layer="97" rot="R90">TX</text>
+<text x="-6.35" y="-3.81" size="1.27" layer="95" rot="R90">&gt;NAME</text>
+<text x="-5.08" y="-3.81" size="1.27" layer="96" rot="R90">&gt;VALUE</text>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="ANTENNA" prefix="ANT" uservalue="yes">
+<gates>
+<gate name="G$1" symbol="ANTANNA" x="0" y="12.7"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="FILTER" prefix="FILTER" uservalue="yes">
+<gates>
+<gate name="G$1" symbol="FILTER" x="0" y="0"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="SWITCH" prefix="SW">
+<gates>
+<gate name="G$1" symbol="RX/TX_SWITCH" x="0" y="0"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -124,6 +199,12 @@ LETTER landscape</description>
 </classes>
 <parts>
 <part name="FRAME1" library="frames" deviceset="LETTER_L" device=""/>
+<part name="FRAME2" library="frames" deviceset="LETTER_L" device=""/>
+<part name="FRAME3" library="frames" deviceset="LETTER_L" device=""/>
+<part name="FRAME4" library="frames" deviceset="LETTER_L" device=""/>
+<part name="ANT1" library="Block diagrams" deviceset="ANTENNA" device=""/>
+<part name="FILTER1" library="Block diagrams" deviceset="FILTER" device=""/>
+<part name="SW1" library="Block diagrams" deviceset="SWITCH" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -134,6 +215,15 @@ LETTER landscape</description>
 <instances>
 <instance part="FRAME1" gate="G$1" x="0" y="0"/>
 <instance part="FRAME1" gate="G$2" x="147.32" y="0"/>
+<instance part="FRAME2" gate="G$1" x="254" y="0"/>
+<instance part="FRAME2" gate="G$2" x="401.32" y="0"/>
+<instance part="FRAME3" gate="G$1" x="0" y="-190.5"/>
+<instance part="FRAME3" gate="G$2" x="147.32" y="-190.5"/>
+<instance part="FRAME4" gate="G$1" x="254" y="-190.5"/>
+<instance part="FRAME4" gate="G$2" x="401.32" y="-190.5"/>
+<instance part="ANT1" gate="G$1" x="12.7" y="170.18"/>
+<instance part="FILTER1" gate="G$1" x="20.32" y="152.4"/>
+<instance part="SW1" gate="G$1" x="33.02" y="152.4" rot="R270"/>
 </instances>
 <busses>
 </busses>
